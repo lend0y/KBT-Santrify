@@ -9,7 +9,7 @@ function isAdmin() {
 
 function redirect($url) {
     header("Location: " . BASE_URL . $url);
-    exit();
+    exit;
 }
 
 function sanitize($data) {

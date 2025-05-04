@@ -4,6 +4,7 @@ require_once '../includes/functions.php';
 
 if (isLoggedIn()) {
     redirect('index.php');
+    exit;
 }
 
 $pageTitle = 'Masuk';
@@ -49,8 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $redirect_url = $_SESSION['redirect_url'];
                     unset($_SESSION['redirect_url']);
                     redirect($redirect_url);
+                    exit;
                 } else {
                     redirect('index.php');
+                    exit;
                 }
             } else {
                 $error = "Username atau password salah.";
