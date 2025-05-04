@@ -1,18 +1,18 @@
 version: '3.8'
 
 services:
-  php:
+  santrify-php:
     build: .
     ports:
       - "8020:80"
     volumes:
       - .:/var/www/html
     depends_on:
-      - mysql
+      - database_santrify
     networks:
       - app-network
 
-  mysql:
+  database-santrify:
     image: mysql:8.0
     restart: always
     environment:
