@@ -17,7 +17,7 @@ try {
 }
 
 // Base URL
-define('BASE_URL', 'http://localhost/KBT-Santrify/');
+define('BASE_URL', 'http://localhost/Santrify/');
 
 // Site settings
 define('SITE_NAME', 'Santrify');
