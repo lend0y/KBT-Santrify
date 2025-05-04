@@ -46,7 +46,7 @@ require_once '../includes/header.php';
 
 <section class="confirm-order-section">
     <div class="container">
-        <h1><i class="fas fa-check-circle"></i> Konfirmasi Pesanan</h1>
+        <h1 class="text-center"><i class="fas fa-check-circle"></i> Konfirmasi Pesanan</h1>
         
         <div class="order-summary">
             <h2>Ringkasan Pesanan</h2>
@@ -120,20 +120,20 @@ require_once '../includes/header.php';
                     <h3>Informasi Rekening</h3>
                     <div class="bank-info">
                         <p><strong>Bank BCA</strong></p>
-                        <p>No. Rekening: 1234567890</p>
-                        <p>Atas Nama: Yayasan Santrify</p>
+                        <p>No. Rekening: 3310723699</p>
+                        <p>Atas Nama: Ahmad Qayyim</p>
                     </div>
                     <div class="bank-info">
-                        <p><strong>Bank Mandiri</strong></p>
-                        <p>No. Rekening: 0987654321</p>
-                        <p>Atas Nama: Yayasan Santrify</p>
+                        <p><strong>Bank BCA</strong></p>
+                        <p>No. Rekening: 6225004012</p>
+                        <p>Atas Nama: Tengku Rabbani</p>
                     </div>
                 </div>
                 
                 <div class="e-wallet-details" id="ewallet_details" style="display: none;">
                     <h3>Informasi E-Wallet</h3>
                     <div class="ewallet-info">
-                        <p>Nomor GoPay/OVO/DANA: 081234567890</p>
+                        <p>Nomor GoPay/OVO/DANA: +62 822-1414-5814</p>
                         <p>Atas Nama: Santrify</p>
                     </div>
                 </div>
@@ -153,6 +153,232 @@ require_once '../includes/header.php';
         </div>
     </div>
 </section>
+
+<style>
+/* Inline CSS untuk memastikan tampilan benar */
+.confirm-order-section {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+
+.confirm-order-section h1 {
+    margin-bottom: 40px;
+    color: #004445;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.confirm-order-section h1 i {
+    margin-right: 10px;
+    color: #28a745;
+}
+
+.order-summary {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.order-summary h2 {
+    color: #004445;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-detail {
+    padding: 0 10px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.detail-row .label {
+    font-weight: 600;
+    color: #333;
+}
+
+.detail-row.total {
+    margin-top: 10px;
+    padding: 15px 0;
+    border-top: 2px solid #eee;
+    border-bottom: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #004445;
+}
+
+.payment-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.payment-section h2 {
+    color: #004445;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.payment-option {
+    position: relative;
+}
+
+.payment-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.payment-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-option label i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #2c786c;
+}
+
+.payment-option input[type="radio"]:checked + label {
+    border-color: #2c786c;
+    background-color: rgba(44, 120, 108, 0.05);
+}
+
+.bank-details, .e-wallet-details, .cash-details {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.bank-details h3, .e-wallet-details h3, .cash-details h3 {
+    color: #004445;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.bank-info {
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.bank-info:last-child {
+    margin-bottom: 0;
+}
+
+.bank-info p {
+    margin-bottom: 5px;
+}
+
+.bank-info p:last-child {
+    margin-bottom: 0;
+}
+
+.ewallet-info, .cash-details p {
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-actions .btn {
+    flex: 1;
+}
+
+.btn-primary {
+    background-color: #2c786c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #004445;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #2c786c;
+    border: 2px solid #2c786c;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #2c786c;
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .detail-row {
+        flex-direction: column;
+    }
+    
+    .detail-row .label {
+        margin-bottom: 5px;
+    }
+    
+    .payment-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+}
+</style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

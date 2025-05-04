@@ -14,12 +14,12 @@ function getPackageDetails($packageId) {
     $packages = [
         'tahsin' => [
             'name' => 'Tahsin Qur\'an',
-            'price' => 299000,
+            'price' => 200000,
             'description' => 'Program belajar membaca Al-Qur\'an dengan koreksi tajwid oleh guru bersertifikat'
         ],
         'tahfidz' => [
             'name' => 'Tahfidz Intensive',
-            'price' => 499000,
+            'price' => 350000,
             'description' => 'Program hafalan Al-Qur\'an dengan setoran harian dan bimbingan musyrif'
         ]
     ];

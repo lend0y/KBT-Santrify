@@ -82,7 +82,6 @@ require_once '../includes/header.php';
             <div class="form-group">
                 <label for="password"><i class="fas fa-lock"></i> Password</label>
                 <input type="password" id="password" name="password" required>
-                <a href="forgot-password.php" class="forgot-password">Lupa password?</a>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Masuk</button>
         </form>

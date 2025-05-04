@@ -39,7 +39,7 @@
                     </div>
                 <?php else: ?>
                     <a href="<?php echo BASE_URL; ?>auth/login.php" class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Masuk</a>
-                    <a href="<?php echo BASE_URL; ?>register.php" class="btn btn-primary"><i class="fas fa-user-plus"></i> Daftar</a>
+                    <a href="<?php echo BASE_URL; ?>auth/register.php" class="btn btn-primary"><i class="fas fa-user-plus"></i> Daftar</a>
                 <?php endif; ?>
             </div>
         </div>
