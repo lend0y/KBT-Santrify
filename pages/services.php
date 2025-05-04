@@ -1,8 +1,8 @@
 <?php
-require_once 'includes/config.php';
-require_once 'includes/functions.php';
+require_once '../includes/config.php';
+require_once '../includes/functions.php';
 $pageTitle = 'Pilihan Belajar';
-require_once 'includes/header.php';
+require_once '../includes/header.php';
 ?>
 
 <section class="services-section">
@@ -22,7 +22,7 @@ require_once 'includes/header.php';
                     <li>Guru bersertifikat</li>
                 </ul>
                 <div class="service-price">Rp 299.000/bulan</div>
-                <a href="register.php?package=tahsin" class="btn btn-primary">Daftar Sekarang</a>
+                <a href="<?php echo BASE_URL; ?>payments/confirm-order.php?package=tahsin" class="btn btn-primary">Daftar Sekarang</a>
             </div>
             
             <!-- Paket 2 -->
@@ -37,10 +37,10 @@ require_once 'includes/header.php';
                     <li>Bimbingan musyrif</li>
                 </ul>
                 <div class="service-price">Rp 499.000/bulan</div>
-                <a href="register.php?package=tahfidz" class="btn btn-primary">Daftar Sekarang</a>
+                <a href="<?php echo BASE_URL; ?>payments/confirm-order.php?package=tahfidz" class="btn btn-primary">Daftar Sekarang</a>
             </div>
         </div>
     </div>
 </section>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>

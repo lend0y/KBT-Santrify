@@ -20,8 +20,8 @@
                     <li><a href="<?php echo BASE_URL; ?>modules/quran/"><i class="fas fa-book-quran"></i> Al-Qur'an</a></li>
                     <li><a href="<?php echo BASE_URL; ?>modules/hadits/"><i class="fas fa-book"></i> Hadits</a></li>
                     <li><a href="<?php echo BASE_URL; ?>modules/fiqh/"><i class="fas fa-balance-scale"></i> Fiqih</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>about.php"><i class="fas fa-info-circle"></i> Tentang</a></li>
-                    <li><a href="<?php echo BASE_URL; ?>contact.php"><i class="fas fa-envelope"></i> Kontak</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>pages/about.php">Tentang</a></li>
+                    <li><a href="<?php echo BASE_URL; ?>pages/contact.php"><i class="fas fa-envelope"></i> Kontak</a></li>
                 </ul>
             </nav>
             <div class="auth-buttons">
@@ -34,11 +34,11 @@
                                 <a href="<?php echo BASE_URL; ?>admin/dashboard.php"><i class="fas fa-cog"></i> Admin</a>
                             <?php endif; ?>
                             <a href="<?php echo BASE_URL; ?>users/settings.php"><i class="fas fa-cog"></i> Pengaturan</a>
-                            <a href="<?php echo BASE_URL; ?>logout.php"><i class="fas fa-sign-out-alt"></i> Keluar</a>
+                            <a href="<?php echo BASE_URL; ?>auth/logout.php"><i class="fas fa-sign-out-alt"></i> Keluar</a>
                         </div>
                     </div>
                 <?php else: ?>
-                    <a href="<?php echo BASE_URL; ?>login.php" class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Masuk</a>
+                    <a href="<?php echo BASE_URL; ?>auth/login.php" class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Masuk</a>
                     <a href="<?php echo BASE_URL; ?>register.php" class="btn btn-primary"><i class="fas fa-user-plus"></i> Daftar</a>
                 <?php endif; ?>
             </div>

@@ -94,7 +94,7 @@ require_once '../includes/header.php';
                 <?php if (isset($progressError)): ?>
                     <div class="alert alert-danger"><?php echo $progressError; ?></div>
                 <?php elseif (empty($progress)): ?>
-                    <p class="text-muted">Belum ada progress belajar. <a href="../modules/quran/">Mulai belajar sekarang</a>.</p>
+                    <p class="text-muted">Belum ada progress belajar. <a href="pages/services.php">Mulai belajar sekarang</a>.</p>
                 <?php else: ?>
                     <div class="progress-list">
                         <?php foreach ($progress as $item): ?>

@@ -12,8 +12,8 @@ require_once 'includes/header.php';
     <div class="hero-content">
         <h2>Belajar Agama Islam dengan Mudah</h2>
         <p>Temukan berbagai materi pembelajaran Al-Qur'an, Hadits, Fiqih, dan Akhlak dalam satu platform.</p>
-        <a href="<?php echo BASE_URL; ?>services.php" class="btn btn-primary">Mulai Belajar Sekarang</a>
-    </div>
+        <a href="<?php echo BASE_URL; ?>pages/services.php" class="btn btn-primary">Mulai Belajar Sekarang</a>
+        </div>
 </section>
 
 <section class="features">

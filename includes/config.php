@@ -19,6 +19,6 @@ try {
 define('BASE_URL', 'http://localhost/Santrify/');
 
 // Site settings
-define('SITE_NAME', 'Santriify');
+define('SITE_NAME', 'Santrify');
 define('SITE_DESC', 'Platform Edukasi Agama Islam');
 ?>

@@ -43,8 +43,8 @@ function getArticles($limit = 5, $category = null) {
 function getArticlesByCategory($category) {
     global $conn;
     $stmt = $conn->prepare("SELECT * FROM articles WHERE category = ? ORDER BY created_at DESC");
-    $stmt->bindValue(1, $category, PDO::PARAM_STR);
-    $stmt->execute();
+    $stmt->execute([$category]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
 ?>  

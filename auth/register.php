@@ -1,6 +1,6 @@
 <?php
-require_once 'includes/config.php';
-require_once 'includes/functions.php';
+require_once '../includes/config.php';
+require_once '../includes/functions.php';
 
 if (isLoggedIn()) {
     redirect('index.php');
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once 'includes/header.php';
+require_once '../includes/header.php';
 ?>
 
 <section class="auth-form">
@@ -126,5 +126,5 @@ require_once 'includes/header.php';
 </section>
 
 <?php
-require_once 'includes/footer.php';
+require_once '../includes/footer.php';
 ?>
