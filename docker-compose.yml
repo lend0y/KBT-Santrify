@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-      - database_santrify
+      - database-santrify
     networks:
       - app-network
 
