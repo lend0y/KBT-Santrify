@@ -8,6 +8,15 @@ if (isLoggedIn()) {
 
 $pageTitle = 'Masuk';
 
+// Cek apakah kolom last_login sudah ada di tabel users
+$last_login_exists = false;
+try {
+    $check_column = $conn->query("SHOW COLUMNS FROM users LIKE 'last_login'");
+    $last_login_exists = ($check_column->rowCount() > 0);
+} catch(PDOException $e) {
+    // Kolom tidak ada, variabel last_login_exists sudah false
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = sanitize($_POST['username']);
     $password = $_POST['password'];
@@ -27,6 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_full_name'] = $user['full_name'];
                 $_SESSION['user_profile_pic'] = $user['profile_pic'];
                 $_SESSION['user_role'] = $user['role'];
+                
+                // Update last_login jika kolom tersedia
+                if ($last_login_exists) {
+                    $update_stmt = $conn->prepare("UPDATE users SET last_login = NOW() WHERE id = :id");
+                    $update_stmt->bindParam(':id', $user['id']);
+                    $update_stmt->execute();
+                }
                 
                 // Redirect to dashboard or previous page
                 if (isset($_SESSION['redirect_url'])) {
