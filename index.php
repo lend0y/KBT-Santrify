@@ -13,7 +13,7 @@ require_once 'includes/header.php';
         <h2>Belajar Agama Islam dengan Mudah</h2>
         <p>Temukan berbagai materi pembelajaran Al-Qur'an, Hadits, Fiqih, dan Akhlak dalam satu platform.</p>
         <a href="<?php echo BASE_URL; ?>pages/services.php" class="btn btn-primary">Mulai Belajar Sekarang</a>
-        </div>
+    </div>
 </section>
 
 <section class="features">
@@ -35,25 +35,35 @@ require_once 'includes/header.php';
 </section>
 
 <section class="latest-articles">
-    <h2><i class="fas fa-newspaper"></i> Artikel Terbaru</h2>
-    <div class="articles-grid">
-        <?php foreach ($articles as $article): ?>
-        <article class="article-card">
-            <div class="article-category <?php echo $article['category']; ?>">
-                <?php echo ucfirst($article['category']); ?>
-            </div>
-            <h3><a href="article.php?id=<?php echo $article['id']; ?>"><?php echo $article['title']; ?></a></h3>
-            <div class="article-meta">
-                <img src="<?php echo BASE_URL; ?>assets/images/users/<?php echo $article['profile_pic']; ?>" alt="<?php echo $article['full_name']; ?>">
-                <span><?php echo $article['full_name']; ?></span>
-                <span><?php echo date('d M Y', strtotime($article['created_at'])); ?></span>
-            </div>
-            <p><?php echo substr($article['content'], 0, 150); ?>...</p>
-            <a href="article.php?id=<?php echo $article['id']; ?>" class="read-more">Baca Selengkapnya</a>
-        </article>
-        <?php endforeach; ?>
+    <div class="container">
+        <h2><i class="fas fa-newspaper"></i> Artikel Terbaru</h2>
+        
+        <div class="articles-grid">
+            <?php if (!empty($articles)): ?>
+                <?php foreach ($articles as $article): ?>
+                <article class="article-card">
+                    <div class="article-category <?php echo $article['category']; ?>">
+                        <?php echo ucfirst($article['category']); ?>
+                    </div>
+                    <h3><a href="<?php echo BASE_URL; ?>article.php?id=<?php echo $article['id']; ?>"><?php echo $article['title']; ?></a></h3>
+                    <div class="article-meta">
+                        <img src="<?php echo BASE_URL; ?>assets/images/users/<?php echo $article['profile_pic']; ?>" alt="<?php echo $article['full_name']; ?>">
+                        <span><?php echo $article['full_name']; ?></span>
+                        <span><?php echo date('d M Y', strtotime($article['created_at'])); ?></span>
+                    </div>
+                    <p><?php echo substr(strip_tags($article['content']), 0, 150); ?>...</p>
+                    <a href="<?php echo BASE_URL; ?>article.php?id=<?php echo $article['id']; ?>" class="read-more">Baca Selengkapnya</a>
+                </article>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Belum ada artikel terbaru.</p>
+            <?php endif; ?>
+        </div>
+        
+        <div class="text-center">
+            <a href="<?php echo BASE_URL; ?>pages/articles.php" class="btn btn-outline">Lihat Semua Artikel</a>
+        </div>
     </div>
-    <a href="articles.php" class="btn btn-outline">Lihat Semua Artikel</a>
 </section>
 
 <section class="testimonials">

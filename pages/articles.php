@@ -3,25 +3,35 @@ require_once '../includes/config.php';
 require_once '../includes/functions.php';
 
 $pageTitle = 'Semua Artikel';
-$articles = getArticles(); // Ambil semua artikel
+$articles = getArticles(100); // Get all articles with a high limit
 require_once '../includes/header.php';
 ?>
 
 <section class="all-articles">
-    <h1><i class="fas fa-newspaper"></i> Semua Artikel</h1>
-    <div class="articles-list">
-        <?php if (!empty($articles)): ?>
-            <?php foreach ($articles as $article): ?>
-                <div class="article-card">
-                    <h2><?php echo htmlspecialchars($article['title']); ?></h2>
-                    <p class="date"><?php echo date('d M Y', strtotime($article['published_at'])); ?></p>
-                    <p><?php echo nl2br(htmlspecialchars(substr($article['content'], 0, 150))) . '...'; ?></p>
-                    <a href="view-article.php?id=<?php echo $article['id']; ?>" class="read-more">Baca Selengkapnya</a>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p>Tidak ada artikel yang tersedia.</p>
-        <?php endif; ?>
+    <div class="container">
+        <h1><i class="fas fa-newspaper"></i> Semua Artikel</h1>
+        
+        <div class="articles-grid">
+            <?php if (!empty($articles)): ?>
+                <?php foreach ($articles as $article): ?>
+                <article class="article-card">
+                    <div class="article-category <?php echo $article['category']; ?>">
+                        <?php echo ucfirst($article['category']); ?>
+                    </div>
+                    <h3><a href="<?php echo BASE_URL; ?>article.php?id=<?php echo $article['id']; ?>"><?php echo $article['title']; ?></a></h3>
+                    <div class="article-meta">
+                        <img src="<?php echo BASE_URL; ?>assets/images/users/<?php echo $article['profile_pic']; ?>" alt="<?php echo $article['full_name']; ?>">
+                        <span><?php echo $article['full_name']; ?></span>
+                        <span><?php echo date('d M Y', strtotime($article['created_at'])); ?></span>
+                    </div>
+                    <p><?php echo substr(strip_tags($article['content']), 0, 150); ?>...</p>
+                    <a href="<?php echo BASE_URL; ?>article.php?id=<?php echo $article['id']; ?>" class="read-more">Baca Selengkapnya</a>
+                </article>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Belum ada artikel yang tersedia.</p>
+            <?php endif; ?>
+        </div>
     </div>
 </section>
 

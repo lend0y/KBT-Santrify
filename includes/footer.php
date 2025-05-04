@@ -19,7 +19,7 @@
                         <li><a href="<?php echo BASE_URL; ?>modules/quran/">Al-Qur'an</a></li>
                         <li><a href="<?php echo BASE_URL; ?>modules/hadits/">Hadits</a></li>
                         <li><a href="<?php echo BASE_URL; ?>modules/fiqh/">Fiqih</a></li>
-                        <li><a href="<?php echo BASE_URL; ?>about.php">Tentang Kami</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>pages/about.php">Tentang Kami</a></li>
                     </ul>
                 </div>
                 <div class="footer-section contact">
