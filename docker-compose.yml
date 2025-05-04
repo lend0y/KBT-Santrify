@@ -4,7 +4,7 @@ services:
   santrify-php:
     build: .
     ports:
-      - "8020:80"
+      - "8060:80"
     volumes:
       - .:/var/www/html
     depends_on:
