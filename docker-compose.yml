@@ -4,7 +4,7 @@ services:
   php:
     build: .
     ports:
-      - "8000:80"
+      - "8020:80"
     volumes:
       - .:/var/www/html
     depends_on:
@@ -16,10 +16,10 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: SANTRIFY22
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: santrify_db
       MYSQL_USER: root
-      MYSQL_PASSWORD: SANTRIFY22
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - "3386:3306"
     volumes:
