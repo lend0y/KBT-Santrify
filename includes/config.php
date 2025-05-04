@@ -17,7 +17,7 @@ try {
 }
 
 // Base URL
-define('BASE_URL', 'http://localhost/Santrify/');
+define('BASE_URL', 'https://santrify.my.id/');
 
 // Site settings
 define('SITE_NAME', 'Santrify');
